@@ -27,6 +27,9 @@ jobs:
         with:
           node-version: 18.13
 
+      - name: Check out
+        uses: actions/checkout@v3
+
       - name: Build @11ty
         run: npx @11ty/eleventy@beta
 
