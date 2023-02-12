@@ -1,0 +1,26 @@
+{
+  "name": "iwader.co.uk",
+  "version": "1.0.0",
+  "description": "Personal website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iWader/iwader.co.uk.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iWader/iwader.co.uk/issues"
+  },
+  "homepage": "https://github.com/iWader/iwader.co.uk#readme",
+  "dependencies": {
+    "@11ty/eleventy": "^2.0.0-beta.1",
+    "@11ty/eleventy-fetch": "^3.0.0",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^4.2.0",
+    "dotenv": "^16.0.3",
+    "eleventy-google-fonts": "^0.1.0"
+  }
+}

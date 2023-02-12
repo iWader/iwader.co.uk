@@ -1,0 +1,6 @@
+name = "stats"
+main = "src/index.ts"
+compatibility_date = "2023-02-08"
+kv_namespaces = [
+    { binding = "iwader_co_uk", id = "1b7d10a3f9584685b56bb0af4b818119", preview_id = "4fc61a189426432d8eeed91a93af4c99" },
+]

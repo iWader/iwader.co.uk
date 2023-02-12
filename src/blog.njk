@@ -1,0 +1,32 @@
+---
+title: Blog
+layout: base
+pagination:
+  data: collections.posts
+  size: 10
+  alias: posts
+---
+
+{%- for post in posts %}
+    <article class="post">
+        <a href="{{ site.url }}{{ post.data.page.url }}" class="post-title">
+            <h2>{{ post.data.title }}</h2>
+        </a>
+
+        <p class="post-excerpt">{{ post.data.excerpt }}</p>
+    </article>
+{% endfor %}
+
+<nav class="pagination">
+    {% if pagination.href.previous %}
+        <a href="{{ site.url }}{{ pagination.href.previous }}" class="pagination-link justify-self-start">
+            Previous
+        </a>
+    {% endif %}
+
+    {% if pagination.href.next %}
+        <a href="{{ site.url }}{{ pagination.href.next }}" class="pagination-link grid-col-2 justify-self-end">
+            Next
+        </a>
+    {% endif %}
+</nav>
