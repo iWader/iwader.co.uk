@@ -1,0 +1,38 @@
+on:
+  workflow_dispatch:
+
+  #   push:
+  #     branches:
+  #       - main
+
+#   schedule:
+#     - cron: "0 2 * * *"
+
+jobs:
+  build-site:
+    name: Build Site
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+
+    env:
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      CLOUDFLARE_API_KEY: ${{ secrets.CLOUDFLARE_API_KEY }}
+      CLOUDFLARE_KV_NAMESPACE_ID: ${{ secrets.CLOUDFLARE_KV_NAMESPACE_ID }}
+
+    steps:
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.13
+
+      - name: Build @11ty
+        run: npx @11ty/eleventy@beta
+
+      - name: Deploy
+        uses: cloudflare/wrangler-action@2.0.0
+        with:
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          apiToken: ${{ secrets.CLOUDFLARE_API_KEY }}
+          command: pages publish public --project-name=iwader-co-uk
