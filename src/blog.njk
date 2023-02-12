@@ -9,7 +9,7 @@ pagination:
 
 {%- for post in posts %}
     <article class="post">
-        <a href="{{ site.url }}{{ post.data.page.url }}" class="post-title">
+        <a href="{{ post.data.page.url }}" class="post-title">
             <h2>{{ post.data.title }}</h2>
         </a>
 
@@ -19,13 +19,13 @@ pagination:
 
 <nav class="pagination">
     {% if pagination.href.previous %}
-        <a href="{{ site.url }}{{ pagination.href.previous }}" class="pagination-link justify-self-start">
+        <a href="{{ pagination.href.previous }}" class="pagination-link justify-self-start">
             Previous
         </a>
     {% endif %}
 
     {% if pagination.href.next %}
-        <a href="{{ site.url }}{{ pagination.href.next }}" class="pagination-link grid-col-2 justify-self-end">
+        <a href="{{ pagination.href.next }}" class="pagination-link grid-col-2 justify-self-end">
             Next
         </a>
     {% endif %}
