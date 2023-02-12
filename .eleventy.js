@@ -9,6 +9,7 @@ module.exports = function (config) {
 
   config.addPassthroughCopy('src/assets')
   config.addPassthroughCopy('src/posts')
+  config.addPassthroughCopy('src/robots.txt')
 
   config.addShortcode('year', () => `${new Date().getFullYear()}`)
 
