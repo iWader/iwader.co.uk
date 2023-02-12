@@ -30,6 +30,9 @@ jobs:
       - name: Check out
         uses: actions/checkout@v3
 
+      - name: Install Node Dependencies
+        run: npm install
+
       - name: Build @11ty
         run: npx @11ty/eleventy@beta
 
