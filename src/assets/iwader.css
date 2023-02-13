@@ -184,11 +184,28 @@ code, kbd, pre, samp {
     flex: 1;
 }
 
+.stats-img img, .stats-img svg {
+    max-width: 100%;
+    max-height: 450px;
+}
+
+@media (min-width: 640px) {
+    .stats-img img, .stats-img svg {
+        max-height: 600px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .stats-img img, .stats-img svg {
+        max-height: 800px;
+    }
+}
+
 .stats-content {
     flex: 1;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 640px) {
     .stats-content {
         display: flex;
         flex-direction: column;
