@@ -32,7 +32,7 @@ jobs:
         run: npm install
 
       - name: Build @11ty
-        run: npx @11ty/eleventy@beta
+        run: npm run build
 
       - name: Deploy
         uses: cloudflare/wrangler-action@2.0.0
