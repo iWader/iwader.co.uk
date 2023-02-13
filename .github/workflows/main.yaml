@@ -1,12 +1,12 @@
 on:
   workflow_dispatch:
 
-  #   push:
-  #     branches:
-  #       - main
+  push:
+    branches:
+      - main
 
-#   schedule:
-#     - cron: "0 2 * * *"
+  schedule:
+    - cron: "0 2 * * *"
 
 jobs:
   build-site:
