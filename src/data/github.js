@@ -15,29 +15,38 @@ module.exports = async function () {
     },
   }
 
-  const repositories = await EleventyFetch('https://api.github.com/user/repos?type=all', fetchConfig)
-
+  let hasMore = true
   let contributions = 0
+  let page = 1
+  const perPage = 100
+  const url = `https://api.github.com/user/repos?type=all&per_page=${perPage}`
 
-  const promises = repositories.map(async (repository) => {
-    const [vendor, name] = repository.full_name.split('/')
-    let contributors
+  while (hasMore) {
+    const repositories = await EleventyFetch(`${url}&page=${page}`, fetchConfig)
 
-    try {
-      // This request will fail if the repository is empty
-      contributors = await EleventyFetch(`https://api.github.com/repos/${encodeURIComponent(vendor)}/${encodeURIComponent(name)}/contributors`, fetchConfig)
-    } catch (e) {
-      contributors = []
-    }
+    const promises = repositories.map(async (repository) => {
+      const [vendor, name] = repository.full_name.split('/')
+      let contributors
 
-    contributors.forEach((contributor) => {
-      if (contributor.login === 'iWader') {
-        contributions = contributions + contributor.contributions
+      try {
+        // This request will fail if the repository is empty
+        contributors = await EleventyFetch(`https://api.github.com/repos/${encodeURIComponent(vendor)}/${encodeURIComponent(name)}/contributors`, fetchConfig)
+      } catch (e) {
+        contributors = []
       }
-    })
-  })
 
-  await Promise.all(promises)
+      contributors.forEach((contributor) => {
+        if (contributor.login === 'iWader') {
+          contributions = contributions + contributor.contributions
+        }
+      })
+    })
+
+    await Promise.all(promises)
+
+    hasMore = repositories.length >= perPage
+    page = page + 1
+  }
 
   return {
     contributions,
