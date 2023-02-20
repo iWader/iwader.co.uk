@@ -1,0 +1,28 @@
+on:
+  workflow_dispatch:
+
+jobs:
+  build-site:
+    name: Build Site
+    runs-on: self-hosted
+
+    env:
+      GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      CLOUDFLARE_API_KEY: ${{ secrets.CLOUDFLARE_API_KEY }}
+      CLOUDFLARE_KV_NAMESPACE_ID: ${{ secrets.CLOUDFLARE_KV_NAMESPACE_ID }}
+
+    steps:
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.13
+
+      - name: Check out
+        uses: actions/checkout@v3
+
+      - name: Install Node Dependencies
+        run: npm install
+
+      - name: Build @11ty
+        run: npm run build
