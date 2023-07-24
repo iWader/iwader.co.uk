@@ -26,7 +26,13 @@ module.exports = async function () {
     EleventyFetch(`${baseUrl}/hours_slept`, fetchConfig),
   ]
 
-  const [steps, footDistance, cycleDistance, floorsClimbed, hoursSlept] = await Promise.all(promises)
+  const [
+    steps,
+    footDistance,
+    cycleDistance,
+    floorsClimbed,
+    hoursSlept
+  ] = await Promise.all(promises)
 
   return {
     steps: parseInt(steps, 10),
