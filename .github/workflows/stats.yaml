@@ -36,4 +36,4 @@ jobs:
       with:
         accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
         apiToken: ${{ secrets.CLOUDFLARE_API_KEY }}
-        command: deploy workers/stats/src/index.ts --name=stat
+        command: deploy workers/stats/src/index.ts --name=stats
