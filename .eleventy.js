@@ -1,11 +1,15 @@
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight")
 const googleFonts = require("eleventy-google-fonts")
+const pluginRss = require("@11ty/eleventy-plugin-rss")
 
 require('dotenv').config()
 
 module.exports = function (config) {
   config.addPlugin(syntaxHighlight)
   config.addPlugin(googleFonts)
+  config.addPlugin(pluginRss)
+
+  config.addFilter('dateToRfc3339', pluginRss.dateToRfc3339);
 
   config.addPassthroughCopy('src/assets')
   config.addPassthroughCopy('src/posts')
