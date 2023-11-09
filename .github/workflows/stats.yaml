@@ -26,14 +26,17 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Install Node Dependencies
+        working-directory: workers/stats
         run: npm install
 
       - name: Run Tests
+        working-directory: workers/stats
         run: npm test
 
       - name: Deploy
         uses: cloudflare/wrangler-action@v3
+        working-directory: workers/stats
         with:
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           apiToken: ${{ secrets.CLOUDFLARE_API_KEY }}
-          command: deploy workers/stats/src/index.ts --name=stats
+          command: deploy
