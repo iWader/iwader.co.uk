@@ -1,0 +1,21 @@
+---
+permalink: feed.json
+eleventyExcludeFromCollections: true
+---
+
+{
+    "version": "https://jsonfeed.org/version/1.1",
+    "title": "Wade Urry",
+    "home_page_url": "https://iwader.co.uk/",
+    "feed_url": "https://iwader.co.uk/feed.json",
+    "items" : [
+    {%- for post in collections.posts %}
+    {
+        "id" : "{{ post.data.page.url }}",
+        "title": "{{ post.data.title }}",
+        "url": "https://iwader.co.uk{{ post.data.page.url }}",
+        "content_text": "{{ post.data.excerpt }}",
+        "date_published": "{{ post.date | dateToRfc3339 }}"
+    }{% if not loop.last %},{% else %}{%- endif -%}
+    {%- endfor -%}
+]}

@@ -1,0 +1,25 @@
+---
+permalink: feed.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Wade Urry</title>
+  <subtitle>Developer</subtitle>
+  <link href="https://iwader.co.uk/feed.xml" rel="self"/>
+  <link href="https://iwader.co.uk"/>
+  <updated>{{ collections.posts | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
+  <id>https://iwader.co.uk/</id>
+  <author>
+    <name>Wade Urry</name>
+  </author>
+  {%- for post in collections.posts | reverse %}
+  <entry>
+    <title>{{ post.data.title }}</title>
+    <link href="https://iwader.co.uk{{ post.url }}"/>
+    <updated>{{ post.date | dateToRfc3339 }}</updated>
+    <id>https://iwader.co.uk{{ post.url }}</id>
+    <content type="html">{{ post.templateContent }}</content>
+  </entry>
+  {%- endfor %}
+</feed>
