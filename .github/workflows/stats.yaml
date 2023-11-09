@@ -16,7 +16,7 @@ jobs:
       CLOUDFLARE_API_KEY: ${{ secrets.CLOUDFLARE_API_KEY }}
       CLOUDFLARE_KV_NAMESPACE_ID: ${{ secrets.CLOUDFLARE_KV_NAMESPACE_ID }}
 
-    gsteps:
+    steps:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
