@@ -10,7 +10,9 @@
     <title>{{ title }} | Wade Urry</title>
 
     <link rel="stylesheet" href="/assets/iwader.css" type="text/css">
-    <link rel="stylesheet" href="/assets/highlight.css" type="text/css">
+
+    <link rel="preload" href="/assets/highlight.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/assets/highlight.css"></noscript>
 
     {% eleventyGoogleFonts 'https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap' %}
 
