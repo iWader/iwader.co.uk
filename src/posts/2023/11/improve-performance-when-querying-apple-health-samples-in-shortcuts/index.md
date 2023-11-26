@@ -1,6 +1,6 @@
 ---
 date: "2023-11-22"
-title: "Improve Performance When Querying Apple Health Samples in Shortcuts"
+title: "How to Improve Performance When Querying Apple Health Samples in Shortcuts"
 excerpt: "My [home page](/) has a couple of sections which display my health and activity data. This is powered by a Shortcut that runs on my iPhone every day at 9am. I query data from Apple Health, and then trigger a deployment via GitHub actions.
 
 This was working well, until I started exercising a lot more during the summer months. The Shortcut was taking longer and longer to run, and before long started hitting many problems. Over time, it got slower and slower, sometimes running from 9am and into the afternoon. This was destroying my phone's battery and making the device hot for long periods. Eventually, it ended up throwing an error most days."
