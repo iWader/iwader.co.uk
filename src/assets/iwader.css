@@ -294,7 +294,7 @@ code, kbd, pre, samp {
 
 .social {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 1em;
     list-style: none;
     padding-left: 0;
