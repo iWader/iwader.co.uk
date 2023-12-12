@@ -37,6 +37,14 @@ code, kbd, pre, samp {
     font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
+code {
+    font-size: 0.75em;
+    color: #ef5350;
+    padding: 0.25em 0.5em;
+    border-radius: 0.5em;
+    background: #f5f5f5;
+}
+
 .container {
     max-width: 1170px;
     margin: auto;
