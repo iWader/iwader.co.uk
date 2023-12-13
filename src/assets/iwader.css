@@ -37,7 +37,7 @@ code, kbd, pre, samp {
     font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
-code {
+code:not(code[class*="language-"]) {
     font-size: 0.75em;
     color: #ef5350;
     padding: 0.25em 0.5em;
