@@ -54,6 +54,13 @@ Both sides of our family have German relations, but I'd never learned any German
 
 This year I set about learning German using Duolingo, getting to a 100 day streak. Since our little one arrived this has been put on the back burner, so in 2024 I want to pick this up again. Particularly as we want our kid to be bilingual.
 
+## TL;DR
+
+- Lost 30kg through diet and exercise
+- Had a child
+- Learned some German
+- Became a single car household
+
 ## Looking into 2024
 
 Going forward in to 2024 I want to set myself a few goals to focus on
