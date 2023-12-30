@@ -33,7 +33,7 @@ p {
     font-size: 1.2em;
 }
 
-code, kbd, pre, samp {
+code, kbd, pre, samp, .monospace {
     font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
