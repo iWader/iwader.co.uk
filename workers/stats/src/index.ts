@@ -1,5 +1,6 @@
 export interface Env {
 	iwader_co_uk: KVNamespace,
+	AUTHORIZATION_TOKEN: string,
 }
 
 export interface Payload {
@@ -16,6 +17,12 @@ export default {
 		env: Env,
 		ctx: ExecutionContext
 	): Promise<Response> {
+		if (request.headers.get('Authorization') !== `Bearer ${env.AUTHORIZATION_TOKEN}`) {
+			return new Response(null, {
+				status: 401,
+			})
+		}
+
 		const json: Payload = await request.json()
 
 		await env.iwader_co_uk.put('hours_slept', json.hours_slept.toString())
