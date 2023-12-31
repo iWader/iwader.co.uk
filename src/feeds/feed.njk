@@ -13,7 +13,7 @@ eleventyExcludeFromCollections: true
   <author>
     <name>Wade Urry</name>
   </author>
-  {%- for post in collections.posts | reverse %}
+  {%- for post in collections.posts %}
   <entry>
     <title>{{ post.data.title }}</title>
     <link href="https://iwader.co.uk{{ post.url }}"/>
