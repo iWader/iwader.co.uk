@@ -22,6 +22,23 @@ module.exports = function (config) {
     return new Intl.NumberFormat().format(number)
   })
 
+  config.addNunjucksFilter('seconds_to_duration', (seconds) => {
+    const minutes = Math.round(seconds / 60)
+    const hours = Math.floor(minutes / 60)
+
+    if (hours > 0) {
+      return `${hours}h ${minutes % 60}m`
+    }
+
+    return `${minutes}m`
+  })
+
+  config.addNunjucksFilter('meters_to_distance', (meters) => {
+    const km = (meters / 1000).toFixed(2)
+
+    return `${km}km`
+  })
+
   config.addCollection('posts', function(collection) {
     return collection.getFilteredByGlob('src/posts/**/**/**/*.md').reverse()
   })
