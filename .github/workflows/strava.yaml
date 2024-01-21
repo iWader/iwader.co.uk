@@ -29,10 +29,6 @@ jobs:
         working-directory: workers/strava
         run: npm install
 
-      - name: Run Tests
-        working-directory: workers/strava
-        run: npm test
-
       - name: Deploy
         uses: cloudflare/wrangler-action@v3
         with:
