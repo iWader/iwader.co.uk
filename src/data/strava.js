@@ -4,7 +4,7 @@ module.exports = async function () {
     console.log('Fetching strava data')
 
     const data = await EleventyFetch('https://strava.iwader.workers.dev/activities', {
-        duration: '0d',
+        duration: '1d',
         type: 'json',
     })
 
