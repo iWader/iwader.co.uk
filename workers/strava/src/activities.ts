@@ -26,7 +26,7 @@ export default {
 			return new Response(JSON.stringify(body), { status: 200 })
 		}
 
-		body.activities = (await getStravaAthleteActivities(accessToken)).slice(0, 6)
+		body.activities = (await getStravaAthleteActivities(accessToken))
 
 		const promises = body.activities.map(async (activity: StravaActivity) => {
 			if (activity.map && activity.map.summary_polyline) {
