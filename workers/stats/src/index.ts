@@ -2,7 +2,7 @@ export default {
 	async fetch(
 		request: Request,
 		env: Env,
-		ctx: ExecutionContext
+		ctx: ExecutionContext,
 	): Promise<Response> {
 		if (request.headers.get('Authorization') !== `Bearer ${env.AUTHORIZATION_TOKEN}`) {
 			return new Response(null, {
@@ -21,4 +21,4 @@ export default {
 
 		return new Response()
 	},
-};
+}
