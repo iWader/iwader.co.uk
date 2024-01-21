@@ -1,16 +1,3 @@
-export interface Env {
-	iwader_co_uk: KVNamespace,
-	AUTHORIZATION_TOKEN: string,
-}
-
-export interface Payload {
-	hours_slept: number,
-	floors_climbed: number,
-	steps: number,
-	cycle_distance: number,
-	foot_distance: number,
-}
-
 export default {
 	async fetch(
 		request: Request,
@@ -30,6 +17,7 @@ export default {
 		await env.iwader_co_uk.put('steps', json.steps.toString())
 		await env.iwader_co_uk.put('cycle_distance', json.cycle_distance.toString())
 		await env.iwader_co_uk.put('foot_distance', json.foot_distance.toString())
+		await env.iwader_co_uk.put('weight', json.weight.toString())
 
 		return new Response()
 	},

@@ -1,7 +1,6 @@
 import { unstable_dev } from 'wrangler'
 import type { UnstableDevWorker } from 'wrangler'
 import { describe, expect, it, beforeAll, afterAll } from 'vitest'
-import { Payload } from './index'
 
 describe('Worker', () => {
 	let worker: UnstableDevWorker
@@ -51,6 +50,7 @@ describe('Worker', () => {
 			foot_distance: 0,
 			hours_slept: 0,
 			steps: 0,
+			weight: 0,
 		}
 
 		const response = await worker.fetch('/', {
