@@ -9,4 +9,5 @@ interface Payload {
 	steps: number,
 	cycle_distance: number,
 	foot_distance: number,
+	weight: number,
 }

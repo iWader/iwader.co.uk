@@ -17,6 +17,7 @@ export default {
 		await env.iwader_co_uk.put('steps', json.steps.toString())
 		await env.iwader_co_uk.put('cycle_distance', json.cycle_distance.toString())
 		await env.iwader_co_uk.put('foot_distance', json.foot_distance.toString())
+		await env.iwader_co_uk.put('weight', json.weight.toString())
 
 		return new Response()
 	},
