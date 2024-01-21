@@ -30,7 +30,7 @@ export default {
 
 		const promises = body.activities.map(async (activity: StravaActivity) => {
 			if (activity.map && activity.map.summary_polyline) {
-				const overlay = `path-2+9856E8-1+9856E8-1(${encodeURIComponent(activity.map.summary_polyline)})`
+				const overlay = `path-3+9856E8(${encodeURIComponent(activity.map.summary_polyline)})`
 				const url = new URL(`https://api.mapbox.com/styles/v1/${env.MAPBOX_USERNAME}/${env.MAPBOX_STYLE_ID}/static/${overlay}/auto/640x640@2x?access_token=${env.MAPBOX_ACCESS_TOKEN}`)
 
 				activity.map.image = url.toString()
