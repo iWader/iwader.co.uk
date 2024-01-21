@@ -295,7 +295,7 @@ a:active, a:hover, a:focus {
     margin-top: 3em;
 }
 
-@media (min-width: 640px) {
+@media (min-width: 768px) {
     .footer {
         flex-direction: row;
         justify-content: space-between;
@@ -304,9 +304,9 @@ a:active, a:hover, a:focus {
 }
 
 .social {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-gap: 1em;
+    display: flex;
+    justify-content: center;
+    gap: 1em;
     list-style: none;
     padding-left: 0;
 }
