@@ -269,6 +269,9 @@ code:not(code[class*="language-"]) {
 
 .nav-item:active, .nav-item:hover, .nav-item:focus {
     text-decoration: none;
+}
+
+a:active, a:hover, a:focus {
     color: var(--primary-color);
     transition: var(--transition-easing) var(--transition-duration);
 }

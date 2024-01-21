@@ -24,6 +24,7 @@ module.exports = async function () {
     EleventyFetch(`${baseUrl}/cycle_distance`, fetchConfig),
     EleventyFetch(`${baseUrl}/floors_climbed`, fetchConfig),
     EleventyFetch(`${baseUrl}/hours_slept`, fetchConfig),
+    EleventyFetch(`${baseUrl}/weight`, fetchConfig)
   ]
 
   const [
@@ -31,7 +32,8 @@ module.exports = async function () {
     footDistance,
     cycleDistance,
     floorsClimbed,
-    hoursSlept
+    hoursSlept,
+    weight,
   ] = await Promise.all(promises)
 
   return {
@@ -40,5 +42,7 @@ module.exports = async function () {
     cycleDistance: parseInt(cycleDistance, 10),
     floorsClimbed: parseInt(floorsClimbed, 10),
     hoursSlept: parseInt(hoursSlept, 10),
+    weight: parseInt(weight, 10),
+    weightLoss: 124 - parseInt(weight, 10),
   }
 }
