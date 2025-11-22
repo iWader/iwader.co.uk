@@ -42,7 +42,7 @@ module.exports = async function () {
     cycleDistance: parseInt(cycleDistance, 10),
     floorsClimbed: parseInt(floorsClimbed, 10),
     hoursSlept: parseInt(hoursSlept, 10),
-    weight: parseInt(weight, 10),
-    weightLoss: 124 - parseInt(weight, 10),
+    weight: parseFloat(weight),
+    weightLoss: 124 - parseFloat(weight),
   }
 }
