@@ -22,12 +22,12 @@ jobs:
 
     steps:
       - name: Setup Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v6
         with:
-          node-version: 18.13
+          node-version: 24.13
 
       - name: Check out
-        uses: actions/checkout@v3
+        uses: actions/checkout@v5
 
       - name: Install Node Dependencies
         run: npm install
