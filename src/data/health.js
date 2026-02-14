@@ -43,6 +43,6 @@ module.exports = async function () {
     floorsClimbed: parseInt(floorsClimbed, 10),
     hoursSlept: parseInt(hoursSlept, 10),
     weight: parseFloat(weight),
-    weightLoss: 124 - parseFloat(weight),
+    weightLoss: (124 - parseFloat(weight)).toFixed(2),
   }
 }
