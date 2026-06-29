@@ -19,6 +19,7 @@ jobs:
       CLOUDFLARE_API_KEY: ${{ secrets.CLOUDFLARE_API_KEY }}
       CLOUDFLARE_KV_NAMESPACE_ID: ${{ secrets.CLOUDFLARE_KV_NAMESPACE_ID }}
       LASTFM_TOKEN: ${{ secrets.LASTFM_TOKEN }}
+      WHATPULSE_TOKEN: ${{ secrets.WHATPULSE_TOKEN }}
 
     steps:
       - name: Setup Node
