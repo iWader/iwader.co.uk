@@ -2,6 +2,7 @@
 date: "2021-11-19"
 title: "How to fix PHP/PCRE unrecognised compile-time option bit(s) warning"
 excerpt: "We started to see the following warnings after upgrading to PHP 8.0.13. Despite only being warnings they cause the regex to fail and your application will probably error. preg_match(): Compilation failed: unrecognised compile-time option bit(s) at offset 0 preg_replace(): Compilation failed: unrecognised compile-time option bit(s) at offset 0 PHP 8.1-rc5 and 8.0.13 includes a patch for a performance"
+pillar: "engineering"
 ---
 
 We started to see the following warnings after upgrading to PHP 8.0.13. Despite only being warnings they cause the regex to fail and your application will probably error.

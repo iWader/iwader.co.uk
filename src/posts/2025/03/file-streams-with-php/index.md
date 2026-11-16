@@ -2,6 +2,7 @@
 date: "2025-03-13"
 title: "File streams with PHP"
 excerpt: A brief tutorial on using file streams with PHP
+pillar: "engineering"
 ---
 
 File streams allow you to interact with a data source without having to load the whole resource into memory. This avoids hitting memory limits when working with larger files.

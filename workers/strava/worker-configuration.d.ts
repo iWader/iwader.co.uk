@@ -6,4 +6,5 @@ interface Env {
 	MAPBOX_ACCESS_TOKEN: string
 	MAPBOX_USERNAME: string
 	MAPBOX_STYLE_ID: string
+	MAPBOX_STYLE_ID_DARK?: string
 }

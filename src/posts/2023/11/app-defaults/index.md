@@ -2,6 +2,7 @@
 date: "2023-11-09"
 title: "App Defaults"
 excerpt: "A list of apps I use daily. Inspired by Robb Knight and Hemispheric Views podcast"
+pillar: "life"
 ---
 
 These are all the apps I use on a daily basis. Inspired by my colleague [Robb](https://rknight.me/app-defaults/) and the [Hemispheric Views](https://listen.hemisphericviews.com/097) podcast.

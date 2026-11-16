@@ -2,6 +2,7 @@
 title: "How Claude helped me recover £2,000 from my BMW repair bill"
 date: 2026-11-16
 excerpt: "My dealer refused to contribute to a £3,500 air-con repair. With Claude's help, I built a goodwill case that got BMW UK to pay £2,000."
+pillar: "ai"
 ---
 
 BMW UK paid £2,000 towards a £3,500 air-con repair on my car, after the dealership had already said no. I didn't hire anyone or threaten legal action. I spent a few evenings working through it with Claude, the AI assistant I use most days at work.

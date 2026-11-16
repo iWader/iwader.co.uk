@@ -2,6 +2,7 @@
 date: "2023-12-12"
 title: "Laravel Queue Exiting with Status 137"
 excerpt: We recently had a problem with our Laravel queue workers. We kept finding a particular queue job kept silently failing, not always, but often enough to cause us a significant headache. We weren't getting any of the usual logs or exceptions we'd expect with a potential timeout, memory issue, etc. We resorted to add some debug logging in production, profiling our memory usage, etc. but nothing was helping us get to the bottom of the issue. Eventually, I found something useful in the supervisor logs `exit status 137; not expected`.
+pillar: "engineering"
 ---
 
 We recently had a problem with our Laravel queue workers. We kept finding a particular queue job kept silently failing, not always, but often enough to cause us a significant headache.

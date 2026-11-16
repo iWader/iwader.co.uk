@@ -1,0 +1,27 @@
+---
+layout: base
+pagination:
+  data: pillars
+  size: 1
+  alias: pillar
+permalink: "/tags/{{ pillar.slug }}/"
+eleventyComputed:
+  title: "{{ pillar.name }}"
+  excerpt: "{{ pillar.description }}"
+---
+
+<div class="container page-pad">
+    <p class="eyebrow"><a href="/blog/">Writing</a></p>
+    <h1 class="page-title">{{ pillar.name }}</h1>
+    <p class="lead">{{ pillar.description }}</p>
+
+    {% set activePillar = pillar.slug %}
+    {% include "pillar-filter.njk" %}
+
+    {% set items = collections['pillar-' + pillar.slug] %}
+    {% if items.length %}
+        {% include "post-list.njk" %}
+    {% else %}
+        <p class="muted">Nothing here yet. It's on the list.</p>
+    {% endif %}
+</div>

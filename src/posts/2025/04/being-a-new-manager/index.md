@@ -2,6 +2,7 @@
 date: "2025-04-30"
 title: "Being a new manager"
 excerpt: "A cathartic rambling on my first year as a manager"
+pillar: "how-we-work"
 ---
 
 This post is a bit of a ramble

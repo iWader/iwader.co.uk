@@ -1,202 +1,67 @@
 ---
-title: iWader
+title: Home
 layout: base
 ---
 
-<section class="stats stats-right">
-    <div class="stats-img">
-        <img src="/assets/img/wade-hello.svg" alt="Wade waving" width="585" height="827" />
+<section class="hero container">
+    <div class="hero-text">
+        <p class="eyebrow">{{ site.role }}</p>
+        <h1 class="hero-title">Hi, I'm Wade.</h1>
+        <p class="lead">I lead the team building <a href="https://inventorybase.com/">Inventory Base</a> and <a href="https://propertyinspect.com">Property Inspect</a>. I've been on that team for more than eight years: first as an engineer, now as its manager.</p>
+        <p class="lead">I write about how we build software and how we run the team. Outside work, you'll find me running, cycling, cooking, or doing DIY with my family.</p>
+        <div class="button-row">
+            <a class="button button-primary" href="/blog/">Read my writing</a>
+            <a class="button" href="{{ site.linkedin }}">Say hello on LinkedIn</a>
+        </div>
     </div>
-
-    <div class="stats-content">
-        <h1>Hello, I'm Wade</h1>
-
-        <p class="mt-0">I’m a software developer from the UK, and have a passion for all things technology related. I’ve been developing websites since my school days but that doesn't stop me learning leaps and bounds on a daily basis.</p>
-
-        <p>Currently Head of Technology at <a href="https://radweb.com/">Radweb</a>, working on <a href="https://inventorybase.com/">Inventory Base</a> and <a href="https://propertyinspect.com">Property Inspect</a> with all things PHP, infrastructure, and scaling, along with the occasional foray into react native. In my spare time you'll find me running, cycling, cooking, or doing DIY.</p>
+    <div class="hero-image">
+        <img src="/assets/img/wade-hello.svg" alt="Illustration of Wade waving" width="585" height="827">
     </div>
 </section>
 
-<section class="stats stats-left">
-    <div class="stats-content">
-        <p class="stats-title"><small>I</small> Contribute <small>to the open source community</small></p>
-
-        <div class="stats-open-source">
-            <div class="flex flex-column text-center">
-                <span class="number-block mb-1">
-                    {% numberFormat github.contributions %}
-                </span>
-
-                <p class="m-0">Contributions</p>
-            </div>
-
-            <div class="flex flex-column text-center">
-                <span class="number-block mb-1">
-                    {% numberFormat whatpulse.keys %}
-                </span>
-
-                <p class="m-0">Keys</p>
-            </div>
-
-            <div class="flex flex-column text-center col-span-2">
-                <span class="number-block mb-1">
-                    {% numberFormat whatpulse.clicks %}
-                </span>
-
-                <p class="m-0">Clicks</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="stats-img monospace">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160">
-            <path fill="#181818" d="M142,16H18c-1.1000061,0-2,0.8999939-2,2v124c0,1.1000061,0.8999939,2,2,2h124c1.1000061,0,2-0.8999939,2-2 V18C144,16.8999939,143.1000061,16,142,16z"></path>
-            <path fill="#1E1F22" d="M16,22h128v120c0,1.1000061-0.8999939,2-2,2H18c-1.1000061,0-2-0.8999939-2-2V22z"></path>
-            <circle fill="#ED6A5E" cx="19" cy="19" r="1"></circle>
-            <circle fill="#F5BF4F" cx="23" cy="19" r="1"></circle>
-            <circle fill="#62C554" cx="27" cy="19" r="1"></circle>
-            <path fill="#1E1F22" d="M25,144h-7c-1.1000061,0-2-0.8999939-2-2V22h9V144z"></path>
-            <text transform="matrix(1 0 0 1 19 29)" fill="#777777" font-size="4">1</text>
-            <text transform="matrix(1 0 0 1 19 37)" fill="#777777" font-size="4">2</text>
-            <text transform="matrix(1 0 0 1 19 45)" fill="#777777" font-size="4">3</text>
-            <text transform="matrix(1 0 0 1 19 53)" fill="#777777" font-size="4">4</text>
-            <text transform="matrix(1 0 0 1 19 61)" fill="#777777" font-size="4">5</text>
-            <text transform="matrix(1 0 0 1 19 69)" fill="#777777" font-size="4">6</text>
-            <text transform="matrix(1 0 0 1 19 77)" fill="#777777" font-size="4">7</text>
-            <text transform="matrix(1 0 0 1 19 85)" fill="#777777" font-size="4">8</text>
-            <text transform="matrix(1 0 0 1 19 93)" fill="#777777" font-size="4">9</text>
-            <text transform="matrix(1 0 0 1 19 101)" fill="#777777" font-size="4">10</text>
-            <text transform="matrix(1 0 0 1 19 109)" fill="#777777" font-size="4">11</text>
-            <text transform="matrix(1 0 0 1 19 117)" fill="#777777" font-size="4">12</text>
-            <text transform="matrix(1 0 0 1 19 125)" fill="#777777" font-size="4">13</text>
-            <text transform="matrix(1 0 0 1 19 133)" fill="#777777" font-size="4">14</text>
-
-            <text transform="matrix(1 0 0 1 27 29)" fill="#c59072" font-size="4">@extends(</text>
-            <text transform="matrix(1 0 0 1 48 29)" fill="#6F9A6E" font-size="4">'layouts.app'</text>
-            <text transform="matrix(1 0 0 1 78.5 29)" fill="#c59072" font-size="4">)</text>
-
-            <text transform="matrix(1 0 0 1 27 45)" fill="#c59072" font-size="4">@section(</text>
-            <text transform="matrix(1 0 0 1 48 45)" fill="#6F9A6E" font-size="4">'scripts'</text>
-            <text transform="matrix(1 0 0 1 69 45)" fill="#c59072" font-size="4">)</text>
-
-            <text transform="matrix(1 0 0 1 36 53)" fill="#c59072" font-size="4">@vite(</text>
-            <text transform="matrix(1 0 0 1 50 53)" fill="#B3B4BA" font-size="4">[</text>
-            <text transform="matrix(1 0 0 1 52 53)" fill="#6F9A6E" font-size="4">'resources/js/app.ts'</text>
-            <text transform="matrix(1 0 0 1 102 53)" fill="#B3B4BA" font-size="4">]</text>
-            <text transform="matrix(1 0 0 1 104 53)" fill="#c59072" font-size="4">)</text>
-
-            <text transform="matrix(1 0 0 1 27 61)" fill="#c59072" font-size="4">@endsection</text>
-
-            <text transform="matrix(1 0 0 1 27 77)" fill="#c59072" font-size="4">@section(</text>
-            <text transform="matrix(1 0 0 1 48 77)" fill="#6F9A6E" font-size="4">'content'</text>
-            <text transform="matrix(1 0 0 1 69 77)" fill="#c59072" font-size="4">)</text>
-
-            <text transform="matrix(1 0 0 1 36 85)" fill="#D0B880" font-size="4">&lt;x-panel&gt;</text>
-            <text transform="matrix(1 0 0 1 45 93)" fill="#D0B880" font-size="4">&lt;x-title&gt;</text>
-            <text transform="matrix(1 0 0 1 54 101)" fill="#B3B4BA" font-size="4">Hello World!</text>
-            <text transform="matrix(1 0 0 1 45 109)" fill="#D0B880" font-size="4">&lt;/x-title&gt;</text>
-            <text transform="matrix(1 0 0 1 36 117)" fill="#D0B880" font-size="4">&lt;/x-panel&gt;</text>
-
-            <text transform="matrix(1 0 0 1 27 125)" fill="#c59072" font-size="4">@endsection</text>
-
-            <path fill="#222222"
-                d="M141.5,136L141.5,136c0.3000031,0,0.5-0.2000122,0.5-0.5v-110c0-0.2999878-0.1999969-0.5-0.5-0.5l0,0 c-0.3000031,0-0.5,0.2000122-0.5,0.5v110C141,135.7999878,141.1999969,136,141.5,136z"></path>
-            <path fill="#777777"
-                d="M141.5,56L141.5,56c0.3000031,0,0.5-0.2000122,0.5-0.5v-30c0-0.2999878-0.1999969-0.5-0.5-0.5l0,0 c-0.3000031,0-0.5,0.2000122-0.5,0.5v30C141,55.7999878,141.1999969,56,141.5,56z"></path>
-        </svg>
+<section class="container section" aria-labelledby="pillars">
+    <h2 id="pillars" class="eyebrow">What I write about</h2>
+    <div class="pillar-grid">
+        {%- for pillar in pillars %}
+            <a class="pillar-card" href="/tags/{{ pillar.slug }}/">
+                <span class="pillar-card-name">{{ pillar.name }}</span>
+                <span class="pillar-card-text">{{ pillar.description }}</span>
+            </a>
+        {%- endfor %}
     </div>
 </section>
 
-<section class="stats stats-right">
-    <div class="stats-img">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160"><path fill="#cccccc" d="M98.8000031,135.5c0.0999985,1.5,1.3000031,2.6000061,2.8000031,2.7000122l10.5,0.7999878v1h-64v-1 L59.5,138.2000122c1.5-0.1000061,2.6000061-1.2999878,2.8000031-2.7000122l1.8000031-20.3999939h33L98.8000031,135.5z"></path><rect x="48" y="139" fill="#e0e0e0" width="64" height="1"></rect><path fill="#383838" d="M152,116H8V23c0-1.7000122,1.3000031-3,3-3h138c1.6999969,0,3,1.2999878,3,3V116z"></path><path fill="#e0e0e0" d="M149,124H11c-1.6999969,0-3-1.2999878-3-3v-13h144v13C152,122.7000122,150.6999969,124,149,124z"></path><rect x="16" y="28" fill="#f9f9f9" width="128" height="72"></rect><circle fill="#2b2b2b" cx="80" cy="24.5" r="0.5"></circle><circle fill="#383838" cx="80" cy="24.5" r="0.2000122"></circle><circle fill="#cccccc" cx="80" cy="116" r="4"></circle><text transform="matrix(1 0 0 1 60 50)" font-weight="lighter" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="17" class="ng-binding">{% numberFormat stackoverflow.reputation %}</text><text transform="matrix(1 0 0 1 70 60)" font-weight="lighter" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="6">Reputation</text><circle fill="#FFCC00" cx="35" cy="80" r="3"></circle><text transform="matrix(1 0 0 1 33 91)" font-weight="lighter" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="6" class="ng-binding">{% numberFormat stackoverflow.badges.gold %}</text><circle fill="#C5C5C5" cx="80" cy="80" r="3"></circle><text transform="matrix(1 0 0 1 78 91)" font-weight="lighter" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="6" class="ng-binding">{% numberFormat stackoverflow.badges.silver %}</text><circle fill="#CC9966" cx="125" cy="80" r="3"></circle><text transform="matrix(1 0 0 1 121.5 91)" font-weight="lighter" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="6" class="ng-binding">{% numberFormat stackoverflow.badges.bronze %}</text></svg>
+<section class="container section" aria-labelledby="recent">
+    <div class="section-heading">
+        <h2 id="recent" class="eyebrow">Recent writing</h2>
+        <a class="arrow-link" href="/blog/">All writing →</a>
     </div>
+    {% set items = collections.writing.slice(0, 5) %}
+    {% include "post-list.njk" %}
+</section>
 
-    <div class="stats-content">
-        <p class="stats-title"><small>I</small> Help <small>the community</small></p>
-
-        <div class="grid grid-2 gap-3">
-            <div class="flex flex-column text-center">
-                <span class="number-block mb-1">
-                    {% numberFormat stackoverflow.comments %}
-                </span>
-
-                <p class="m-0">Comments</p>
-            </div>
-
-            <div class="flex flex-column text-center">
-                <span class="number-block mb-1">
-                    {% numberFormat stackoverflow.answers %}
-                </span>
-
-                <p class="m-0">Answers</p>
-            </div>
+<section class="container section" aria-labelledby="numbers">
+    <div class="stats-strip">
+        <img class="stats-strip-image" src="/assets/img/wade-jogging.svg" alt="" width="72" height="102">
+        <div class="stats-strip-body">
+            <h2 id="numbers" class="eyebrow">Lately, by the numbers</h2>
+            <dl class="stat-grid">
+                <div><dt>GitHub contributions</dt><dd>{% numberFormat github.contributions %}</dd></div>
+                <div><dt>Stack Overflow reputation</dt><dd>{% numberFormat stackoverflow.reputation %}</dd></div>
+                <div><dt>km on foot this month</dt><dd>{% numberFormat health.footDistance %}</dd></div>
+                <div><dt>Keys pressed</dt><dd>{{ whatpulse.keys | compactNumber }}</dd></div>
+            </dl>
         </div>
+        <a class="arrow-link" href="/now/">More on my Now page →</a>
     </div>
 </section>
 
-<section class="stats stats-left">
-    <div class="stats-content">
-        <p class="stats-title"><small>I'm attempting to be more</small> healthy</p>
-
-        <div class="stats-health">
-            <div class="flex flex-column text-center">
-                <span class="number-block mb-1">
-                    {% numberFormat health.steps %}
-                </span>
-
-                <p class="m-0">Steps</p>
-            </div>
-
-            <div class="flex flex-column text-center">
-                <span class="number-block mb-1">
-                    {% numberFormat health.footDistance %}
-                </span>
-
-                <p class="m-0">km by Foot</p>
-            </div>
-
-            <div class="flex flex-column text-center">
-                <span class="number-block mb-1">
-                    {% numberFormat health.cycleDistance %}
-                </span>
-
-                <p class="m-0">km by Cycle</p>
-            </div>
-
-            <div class="flex flex-column text-center">
-                <span class="number-block mb-1">
-                    {% numberFormat health.floorsClimbed %}
-                </span>
-
-                <p class="m-0">Floors Climbed</p>
-            </div>
+<section class="container section" aria-labelledby="hello">
+    <div class="say-hello">
+        <div>
+            <h2 id="hello" class="say-hello-title">Thinking about working with us?</h2>
+            <p class="say-hello-text">I'm always happy to chat about what it's like on the team. {% if site.email %}Message me on LinkedIn or send me an email.{% else %}Send me a message on LinkedIn.{% endif %}</p>
         </div>
-
-        <p class="m-0 text-center"><small>this month</small></p>
-    </div>
-
-    <div class="stats-img">
-        <img src="/assets/img/wade-jogging.svg" alt="Wade jogging" width="585" height="827" />
-    </div>
-</section>
-
-<section class="stats stats-right">
-    <div class="stats-img">
-        <img src="/assets/img/wade-sleeping.svg" alt="Wade sleeping" width="585" height="476" />
-    </div>
-
-    <div class="stats-content">
-        <p class="stats-title"><small>I</small> Sleep <small>(weird, I know)</small></p>
-
-        <div class="grid">
-            <div class="flex flex-column text-center">
-                <span class="number-block mb-1">
-                    {% numberFormat health.hoursSlept %}
-                </span>
-
-                <p class="m-0">Hours<br /><small>this month</small></p>
-            </div>
-        </div>
+        {% include "say-hello-links.njk" %}
     </div>
 </section>

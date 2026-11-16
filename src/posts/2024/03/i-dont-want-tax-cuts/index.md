@@ -2,6 +2,7 @@
 date: "2024-03-06"
 title: "I don’t want tax cuts"
 excerpt: Today is the annual budgets, and the big topic of discussion is tax cuts. We already had a cut to national insurance in January, and now they're announcing more tax cuts. I don't want tax cuts. I don't need tax cuts. I need public services to be funded and functional
+pillar: "life"
 ---
 
 If there’s money for tax cuts, then there was money available for public services.
