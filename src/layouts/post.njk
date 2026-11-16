@@ -1,9 +1,61 @@
 ---
 layout: base
+isPost: true
 ---
+{%- set pillar = pillar | pillar -%}
+<div class="container container-narrow page-pad">
+    {% if archived %}
+        <aside class="archive-notice" aria-label="Archived post">
+            <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="4" rx="1"></rect><path d="M5 8v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8"></path><path d="M10 12h4"></path></svg>
+            <p>This is from {{ page.date.getUTCFullYear() }}, when I was a junior developer. It's kept for posterity, and the details are probably out of date. <a href="/blog/">See my recent writing</a>.</p>
+        </aside>
+    {% endif %}
 
-<article class="post">
-    <h1>{{ title }}</h1>
+    <article class="post">
+        <header class="post-header">
+            <p class="post-meta">
+                <time datetime="{{ page.date | isoDate }}">{{ page.date | readableDate }}</time>
+                <span aria-hidden="true">·</span>
+                <span>{{ content | readingTime }}</span>
+                <span aria-hidden="true">·</span>
+                {% if archived %}
+                    <a class="pill pill-muted" href="/blog/archive/">Archive</a>
+                {% elif pillar %}
+                    <a class="pill" href="/tags/{{ pillar.slug }}/">{{ pillar.name }}</a>
+                {% endif %}
+            </p>
+            <h1 class="post-title">{{ title }}</h1>
+        </header>
 
-    {{ content | safe }}
-</article>
+        <div class="prose">
+            {{ content | safe }}
+        </div>
+    </article>
+
+    <aside class="author-card" aria-label="About the author">
+        <div class="author-avatar">
+            <img src="/assets/img/wade-hello.svg" alt="" width="120" height="170">
+        </div>
+        <div class="author-text">
+            <p><strong>{{ site.name }}</strong> is Head of Technology at Radweb, where he leads the team building Inventory Base and Property Inspect.</p>
+            <p class="muted">Thinking about working with us? <a href="{{ site.linkedin }}">Message me on LinkedIn</a>{% if site.email %} or <a href="mailto:{{ site.email }}">send me an email</a>{% endif %}.</p>
+        </div>
+    </aside>
+
+    {%- if pillar and not archived -%}
+        {%- set related = collections['pillar-' + pillar.slug] | without(page.url) -%}
+    {%- endif -%}
+    {%- if not related or related.length == 0 -%}
+        {%- set related = collections.writing | without(page.url) -%}
+    {%- endif %}
+    <section class="more-writing" aria-labelledby="more-writing">
+        <h2 id="more-writing" class="eyebrow">{% if pillar and not archived and (collections['pillar-' + pillar.slug] | without(page.url)).length %}More on {{ pillar.name | lower }}{% else %}More writing{% endif %}</h2>
+        {%- for post in related.slice(0, 2) %}
+            {%- set p = post.data.pillar | pillar %}
+            <a class="more-link" href="{{ post.url }}">
+                <span class="more-link-title">{{ post.data.title }}</span>
+                <span class="more-link-meta">{{ post.date | shortDate }}{% if p %} · {{ p.name }}{% endif %}</span>
+            </a>
+        {%- endfor %}
+    </section>
+</div>

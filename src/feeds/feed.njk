@@ -5,7 +5,7 @@ eleventyExcludeFromCollections: true
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Wade Urry</title>
-  <subtitle>Developer</subtitle>
+  <subtitle>{{ site.role }}</subtitle>
   <link href="https://iwader.co.uk/feed.xml" rel="self"/>
   <link href="https://iwader.co.uk"/>
   <updated>{{ collections.posts | getNewestCollectionItemDate | dateToRfc3339 }}</updated>

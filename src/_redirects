@@ -1,0 +1,10 @@
+/blog/1 /blog/ 301
+/blog/1/ /blog/ 301
+/blog/2 /blog/ 301
+/blog/2/ /blog/ 301
+/blog/3 /blog/ 301
+/blog/3/ /blog/ 301
+/post /blog/ 301
+/post/ /blog/ 301
+/feeds/feed /feed.xml 301
+/feeds/feed/ /feed.xml 301

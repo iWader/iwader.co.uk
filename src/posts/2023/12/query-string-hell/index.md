@@ -2,6 +2,7 @@
 date: "2023-12-02"
 title: "Query String Hell"
 excerpt: We came across a bug at work related to query strings and how there’s basically no agreed way of handling complex structures, or anything beyond strings. I guess that's a given seeing as it's a query string
+pillar: "engineering"
 ---
 
 We came across a bug at work related to query strings and how there’s basically no agreed way of handling complex structures, or anything beyond strings. I guess that's a given seeing as it's a query _string_. The `x-www-form-urlencode` spec doesn't really cover duplicate keys, but the spec does state that query strings should be parsed as a list. Even so, it appears every corner of the internet has their own, very different, implementations

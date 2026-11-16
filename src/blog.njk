@@ -1,32 +1,36 @@
 ---
-title: Blog
+title: Writing
 layout: base
-pagination:
-  data: collections.posts
-  size: 10
-  alias: posts
+permalink: /blog/
+excerpt: "Notes on running an engineering team, the systems we build, and life outside work."
 ---
 
-{%- for post in posts %}
-    <article class="post">
-        <a href="{{ post.data.page.url }}" class="post-title">
-            <h2>{{ post.data.title }}</h2>
-        </a>
+<div class="container page-pad">
+    <h1 class="page-title">Writing</h1>
+    <p class="lead">Notes on running an engineering team, the systems we build, and life outside work.</p>
 
-        <p class="post-excerpt">{{ post.data.excerpt }}</p>
-    </article>
-{% endfor %}
+    {% set activePillar = '' %}
+    {% include "pillar-filter.njk" %}
 
-<nav class="pagination">
-    {% if pagination.href.previous %}
-        <a href="{{ pagination.href.previous }}" class="pagination-link justify-self-start">
-            Previous
-        </a>
-    {% endif %}
+    {%- for group in collections.writingByYear %}
+        <section class="year-group" aria-labelledby="year-{{ group.year }}">
+            <h2 id="year-{{ group.year }}" class="year-group-title">{{ group.year }}</h2>
+            <ul class="year-group-list">
+                {%- for post in group.items %}
+                    {%- set p = post.data.pillar | pillar %}
+                    <li>
+                        <time datetime="{{ post.date | isoDate }}">{{ post.date | dayMonth }}</time>
+                        <a class="year-group-link" href="{{ post.url }}">{{ post.data.title }}</a>
+                        {% if p %}<a class="pill" href="/tags/{{ p.slug }}/">{{ p.name }}</a>{% endif %}
+                    </li>
+                {%- endfor %}
+            </ul>
+        </section>
+    {%- endfor %}
 
-    {% if pagination.href.next %}
-        <a href="{{ pagination.href.next }}" class="pagination-link grid-col-2 justify-self-end">
-            Next
-        </a>
-    {% endif %}
-</nav>
+    <section class="archive-panel" aria-labelledby="archive">
+        <h2 id="archive" class="archive-panel-title"><a href="/blog/archive/">Archive, 2013–2017</a></h2>
+        <p>Written when I was a junior developer, and kept for posterity. Most of the technical detail is now out of date.</p>
+        {% include "archive-grid.njk" %}
+    </section>
+</div>

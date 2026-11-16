@@ -2,6 +2,7 @@
 date: "2024-01-21"
 title: "Just give me an API key"
 excerpt: I've been working on adding a [now page](https://iwader.co.uk/now) to my site, which is largely automated pulling in data from Apple Health, Strava, and last.fm.
+pillar: "engineering"
 ---
 
 I've been working on adding a [now page](https://iwader.co.uk/now) to my site, which is largely automated pulling in data from Apple Health, Strava, and last.fm.

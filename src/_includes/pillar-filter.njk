@@ -1,0 +1,6 @@
+<nav class="filter" aria-label="Filter by topic">
+    <a class="filter-item" href="/blog/" {% if not activePillar %}aria-current="page"{% endif %}>All</a>
+    {%- for p in pillars %}
+        <a class="filter-item" href="/tags/{{ p.slug }}/" {% if activePillar == p.slug %}aria-current="page"{% endif %}>{{ p.name }}</a>
+    {%- endfor %}
+</nav>

@@ -2,6 +2,7 @@
 date: "2025-11-22"
 title: "Running my first half marathon"
 excerpt: "A quick recap of my first half-marathon, from someone who spent the past decade avoiding exercise."
+pillar: "life"
 ---
 
 ## Why am I here?

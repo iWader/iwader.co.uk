@@ -2,6 +2,7 @@
 date: "2023-12-09"
 title: "Christmas Stuffing Cake"
 excerpt: My family have been making this stuffing cake for quite a few years now, and it's a firm favourite of mine throughout the Christmas period. We have it with our Christmas dinner, but it's also great cold either by itself or with onion chutney.
+pillar: "life"
 ---
 
 My family have been making this stuffing cake for quite a few years now, and it's a firm favourite of mine throughout the Christmas period. We have it with our Christmas dinner, but it's also great cold either by itself or with onion chutney.

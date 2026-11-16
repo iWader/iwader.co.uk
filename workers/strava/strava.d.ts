@@ -75,6 +75,7 @@ interface PolylineMap {
 	polyline: string
 	summary_polyline: string
 	image: string | never
+	image_dark?: string
 }
 
 interface StravaActivity {

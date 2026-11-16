@@ -2,6 +2,7 @@
 date: "2023-12-30"
 title: "My Review of 2023"
 excerpt: 2023 was by far the biggest change of my life so far. We had our first child, I lost a lot of weight, and made some big changes to my lifestyle.
+pillar: "life"
 ---
 
 2023 was by far the biggest change of my life so far. We had our first child, I lost a lot of weight, and made some big changes to my lifestyle.
