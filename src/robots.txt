@@ -15,3 +15,5 @@ Disallow: /
 
 User-agent: FacebookBot
 Disallow: /
+
+Sitemap: https://iwader.co.uk/sitemap.xml
