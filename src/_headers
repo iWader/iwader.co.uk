@@ -3,7 +3,7 @@
   X-Frame-Options: DENY
   Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
   Cross-Origin-Opener-Policy: same-origin
-  Content-Security-Policy: default-src 'self'; script-src 'self' https://gist.github.com; style-src 'self' 'unsafe-inline' https://github.githubassets.com; img-src 'self' data: https:; frame-src https://social.lol; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests
+  Content-Security-Policy: default-src 'self'; script-src 'self' https://gist.github.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline' https://github.githubassets.com; img-src 'self' data: https:; frame-src https://social.lol; connect-src 'self' https://cloudflareinsights.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests
   ! Access-Control-Allow-Origin
 
 # CSS is versioned with ?v= in base.njk, so it can be cached forever
