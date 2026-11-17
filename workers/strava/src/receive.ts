@@ -1,4 +1,5 @@
 import { exchangeStravaCodeForToken } from './strava'
+import { clearStateCookie, readStateCookie, statesMatch } from './state'
 
 export default {
 	handle: async (
@@ -7,8 +8,11 @@ export default {
 	): Promise<Response> => {
 		const url = new URL(request.url)
 
-		if (!url.searchParams.has('code') || !url.searchParams.has('state') || url.searchParams.get('state') !== env.OAUTH_STATE) {
-			return new Response(null, { status: 400 })
+		// The state must match the one /authorize set for this browser, and it can only be used once
+		const headers = { 'Set-Cookie': clearStateCookie(), 'Cache-Control': 'no-store' }
+
+		if (!url.searchParams.has('code') || !statesMatch(url.searchParams.get('state'), readStateCookie(request))) {
+			return new Response(null, { status: 400, headers })
 		}
 
 		const json = await exchangeStravaCodeForToken(
@@ -18,13 +22,13 @@ export default {
 		)
 
 		if (json.athlete.id !== 14657730) {
-			return new Response(null, { status: 403 })
+			return new Response(null, { status: 403, headers })
 		}
 
 		await env.iwader_co_uk.put('strava_access_token', json.access_token)
 		await env.iwader_co_uk.put('strava_refresh_token', json.refresh_token)
 		await env.iwader_co_uk.put('strava_expires_at', json.expires_at.toString())
 
-		return new Response('Connected', { status: 200 })
+		return new Response('Connected', { status: 200, headers })
 	},
 }
