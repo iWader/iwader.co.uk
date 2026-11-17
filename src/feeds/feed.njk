@@ -19,7 +19,7 @@ eleventyExcludeFromCollections: true
     <link href="https://iwader.co.uk{{ post.url }}"/>
     <updated>{{ post.date | dateToRfc3339 }}</updated>
     <id>https://iwader.co.uk{{ post.url }}</id>
-    <content type="html">{{ post.templateContent }}</content>
+    <content type="html">{{ post.templateContent | htmlToAbsoluteUrls(site.productionUrl + post.url) }}</content>
   </entry>
   {%- endfor %}
 </feed>

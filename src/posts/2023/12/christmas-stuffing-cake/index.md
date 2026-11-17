@@ -44,12 +44,12 @@ Once cooked, remove from the oven and leave to cool before turning out onto a ch
 ## Gallery
 
 <div class="gallery">
-    <img src="stuffing-mixture-blender.jpeg" alt="Stuffing mixture ingredients blitzed in food processor" />
-    <img src="stuffing-mixture.jpeg" alt="Stuffing mixture in a mixing bowl with pork sausage meat added" />
-    <img src="bacon-lined-oven-dish.jpeg" alt="Oven dish lined with streaky bacon" />
-    <img src="stuffing-mixture-bacon.jpeg" alt="Stuffing mixture in oven dish with bacon draped over the sides" />
-    <img src="stuffing-cake-prepped.jpeg" alt="Stuffing cake ready to go in the oven" />
-    <img src="stuffing-cake-cooked.jpeg" alt="Cooked stuffing cake cooling down in the oven disk" />
-    <img src="stuffing-cake-turned-out.jpeg" alt="Cooked stuffing cake turned out onto a chopping board ready to serve" />
+    <img sizes="(min-width: 768px) 356px, (min-width: 640px) 50vw, 100vw" src="stuffing-mixture-blender.jpeg" alt="Stuffing mixture ingredients blitzed in food processor" />
+    <img sizes="(min-width: 768px) 356px, (min-width: 640px) 50vw, 100vw" src="stuffing-mixture.jpeg" alt="Stuffing mixture in a mixing bowl with pork sausage meat added" />
+    <img sizes="(min-width: 768px) 356px, (min-width: 640px) 50vw, 100vw" src="bacon-lined-oven-dish.jpeg" alt="Oven dish lined with streaky bacon" />
+    <img sizes="(min-width: 768px) 356px, (min-width: 640px) 50vw, 100vw" src="stuffing-mixture-bacon.jpeg" alt="Stuffing mixture in oven dish with bacon draped over the sides" />
+    <img sizes="(min-width: 768px) 356px, (min-width: 640px) 50vw, 100vw" src="stuffing-cake-prepped.jpeg" alt="Stuffing cake ready to go in the oven" />
+    <img sizes="(min-width: 768px) 356px, (min-width: 640px) 50vw, 100vw" src="stuffing-cake-cooked.jpeg" alt="Cooked stuffing cake cooling down in the oven disk" />
+    <img sizes="(min-width: 768px) 356px, (min-width: 640px) 50vw, 100vw" src="stuffing-cake-turned-out.jpeg" alt="Cooked stuffing cake turned out onto a chopping board ready to serve" />
 </div>
 

@@ -14,5 +14,9 @@
 /assets/theme.js
   Cache-Control: public, max-age=31536000, immutable
 
+# Processed images are named by a hash of their content
+/img/*
+  Cache-Control: public, max-age=31536000, immutable
+
 /assets/img/*
   Cache-Control: public, max-age=604800

@@ -1,10 +1,27 @@
+const encoder = new TextEncoder()
+
+// Compare SHA-256 digests so both inputs are the same length and the comparison takes the same time
+// whatever the token, rather than returning early at the first mismatched character
+const isAuthorized = async (header: string | null, token: string): Promise<boolean> => {
+	if (!header || !token) {
+		return false
+	}
+
+	const [given, expected] = await Promise.all([
+		crypto.subtle.digest('SHA-256', encoder.encode(header)),
+		crypto.subtle.digest('SHA-256', encoder.encode(`Bearer ${token}`)),
+	])
+
+	return crypto.subtle.timingSafeEqual(given, expected)
+}
+
 export default {
 	async fetch(
 		request: Request,
 		env: Env,
 		ctx: ExecutionContext,
 	): Promise<Response> {
-		if (request.headers.get('Authorization') !== `Bearer ${env.AUTHORIZATION_TOKEN}`) {
+		if (!(await isAuthorized(request.headers.get('Authorization'), env.AUTHORIZATION_TOKEN))) {
 			return new Response(null, {
 				status: 401,
 			})
