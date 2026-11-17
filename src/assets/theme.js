@@ -30,9 +30,10 @@
     }
 
     function updateButton(button) {
-        var isDark = current() === 'dark'
-        button.textContent = isDark ? 'Light mode' : 'Dark mode'
-        button.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode')
+        var theme = current()
+        // CSS shows the moon in light mode and the sun in dark mode
+        button.setAttribute('data-current', theme)
+        button.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode')
     }
 
     apply()
