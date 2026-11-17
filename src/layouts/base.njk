@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="{{ eleventy.generator }}">
-    <meta name="robots" content="{{ 'noindex, ' if noindex }}noai, noimageai">
+    {% if noindex %}<meta name="robots" content="noindex">{% endif %}
     <meta name="color-scheme" content="light dark">
 
     <title>{{ metaTitle }}</title>
@@ -30,6 +30,7 @@
     <meta name="fediverse:creator" content="@wade@social.lol">
 
     <link rel="alternate" type="application/rss+xml" title="Wade Urry RSS" href="{{ site.productionUrl }}/feed.xml">
+    <link rel="ard" href="/.well-known/ard.json">
     <link rel="alternate" type="application/json" title="Wade Urry JSON Feed" href="{{ site.productionUrl }}/feed.json">
 </head>
 <body>

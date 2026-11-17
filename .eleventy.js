@@ -41,7 +41,6 @@ module.exports = function (config) {
   // Only copy post media, not the markdown sources or data files
   config.addPassthroughCopy('src/posts/**/*.{jpg,jpeg,png,webp,gif,svg,mp4,webm}')
   config.addPassthroughCopy('src/robots.txt')
-  config.addPassthroughCopy('src/ai.txt')
   config.addPassthroughCopy('src/_redirects')
   config.addPassthroughCopy('src/_headers')
 

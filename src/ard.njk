@@ -1,0 +1,45 @@
+---
+permalink: /.well-known/ard.json
+eleventyExcludeFromCollections: true
+---
+{
+  "entries": [
+    {
+      "identifier": "urn:air:iwader.co.uk:llms-txt",
+      "displayName": "{{ site.name | safe }}: site guide for LLMs",
+      "description": "A Markdown index of every page and post on {{ site.name | safe }}'s website, with short summaries.",
+      "type": "text/markdown",
+      "url": "{{ site.productionUrl | safe }}/llms.txt",
+      "updatedAt": "{{ build.date.toISOString() | safe }}",
+      "representativeQueries": [
+        "what does Wade Urry write about",
+        "find Wade Urry's posts on running an engineering team",
+        "who is the Head of Technology at Radweb"
+      ]
+    },
+    {
+      "identifier": "urn:air:iwader.co.uk:feeds:json",
+      "displayName": "{{ site.name | safe }}: JSON Feed",
+      "description": "Every post on the site with full content, as JSON Feed 1.1.",
+      "type": "application/feed+json",
+      "url": "{{ site.productionUrl | safe }}/feed.json",
+      "updatedAt": "{{ build.date.toISOString() | safe }}",
+      "representativeQueries": [
+        "what has Wade Urry published recently",
+        "read Wade Urry's latest blog post"
+      ]
+    },
+    {
+      "identifier": "urn:air:iwader.co.uk:feeds:atom",
+      "displayName": "{{ site.name | safe }}: Atom feed",
+      "description": "Every post on the site with full content, as Atom.",
+      "type": "application/atom+xml",
+      "url": "{{ site.productionUrl | safe }}/feed.xml",
+      "updatedAt": "{{ build.date.toISOString() | safe }}",
+      "representativeQueries": [
+        "subscribe to Wade Urry's blog",
+        "list Wade Urry's blog posts"
+      ]
+    }
+  ]
+}
