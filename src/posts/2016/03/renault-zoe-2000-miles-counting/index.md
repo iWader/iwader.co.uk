@@ -34,7 +34,7 @@ I've just hit 2,000 miles after 3 months, breaking down the cost; We pay approx 
 
 ![Renault Zoe - Cost breakdown](images/renault-zoe-cost-breakdown-1024x544.png)
 
-[caption id="attachment_687" align="aligncenter" width="1024"]![Renault Zoe - kWh breakdown](images/renault-zoe-kwh-breakdown-1024x533.png) Renault Zoe - kWh breakdown[/caption]
+![Renault Zoe - kWh breakdown](images/renault-zoe-kwh-breakdown-1024x533.png)
 
 ## ECO Mode
 
