@@ -38,10 +38,11 @@ module.exports = function (config) {
   config.addFilter('dateToRfc3339', pluginRss.dateToRfc3339);
 
   config.addPassthroughCopy('src/assets')
-  config.addPassthroughCopy('src/posts')
+  // Only copy post media, not the markdown sources or data files
+  config.addPassthroughCopy('src/posts/**/*.{jpg,jpeg,png,webp,gif,svg,mp4,webm}')
   config.addPassthroughCopy('src/robots.txt')
-  config.addPassthroughCopy('src/ai.txt')
   config.addPassthroughCopy('src/_redirects')
+  config.addPassthroughCopy('src/_headers')
 
   config.addShortcode('year', () => `${new Date().getFullYear()}`)
 

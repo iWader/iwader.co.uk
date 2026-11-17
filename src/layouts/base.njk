@@ -1,6 +1,6 @@
 {%- set isHome = page.url == '/' -%}
 {%- set metaTitle = site.name + ' — ' + site.role if isHome else title + ' | ' + site.name -%}
-{%- set metaDescription = (excerpt | plainExcerpt(300)) if excerpt else site.description -%}
+{%- set metaDescription = (excerpt | plainExcerpt(160)) if excerpt else site.description -%}
 {%- set canonical = site.productionUrl + page.url -%}
 <!doctype html>
 <html lang="en-GB">
@@ -8,15 +8,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="{{ eleventy.generator }}">
-    <meta name="robots" content="noai, noimageai">
+    {% if noindex %}<meta name="robots" content="noindex">{% endif %}
     <meta name="color-scheme" content="light dark">
 
     <title>{{ metaTitle }}</title>
     <meta name="description" content="{{ metaDescription }}">
     <link rel="canonical" href="{{ canonical }}">
 
-    <link rel="stylesheet" href="/assets/iwader.css">
-    {% if isPost %}<link rel="stylesheet" href="/assets/highlight.css">{% endif %}
+    <link rel="stylesheet" href="/assets/iwader.css?v={{ build.date.getTime() }}">
+    {% if isPost %}<link rel="stylesheet" href="/assets/highlight.css?v={{ build.date.getTime() }}">{% endif %}
     <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
 
     <meta property="og:site_name" content="{{ site.name }}">
@@ -30,6 +30,7 @@
     <meta name="fediverse:creator" content="@wade@social.lol">
 
     <link rel="alternate" type="application/rss+xml" title="Wade Urry RSS" href="{{ site.productionUrl }}/feed.xml">
+    <link rel="ard" href="/.well-known/ard.json">
     <link rel="alternate" type="application/json" title="Wade Urry JSON Feed" href="{{ site.productionUrl }}/feed.json">
 </head>
 <body>

@@ -1,0 +1,36 @@
+---
+permalink: /llms.txt
+eleventyExcludeFromCollections: true
+---
+# {{ site.name | safe }}
+
+> {{ site.description | safe }}
+
+This is the personal website of {{ site.name | safe }}, {{ site.role | safe }}. It covers how a small product engineering team works, the systems they build, using AI in the team, and life outside work (mostly running). Posts from before 2018 are archived and were written as a junior developer, so their technical details may be out of date.
+
+## Pages
+
+- [Home]({{ site.productionUrl | safe }}/): Who I am and what I write about
+- [Writing]({{ site.productionUrl | safe }}/blog/): Every current post, newest first
+- [Now]({{ site.productionUrl | safe }}/now/): What I'm doing at the moment, updated nightly
+{%- for pillar in pillars %}
+- [{{ pillar.name | safe }}]({{ site.productionUrl | safe }}/tags/{{ pillar.slug | safe }}/): {{ pillar.description | safe }}
+{%- endfor %}
+
+## Writing
+{% for post in collections.writing %}
+- [{{ post.data.title | safe }}]({{ site.productionUrl | safe }}{{ post.url | safe }}){% if post.data.excerpt %}: {{ post.data.excerpt | plainExcerpt(200) | safe }}{% endif %}
+{%- endfor %}
+
+## Feeds
+
+- [Atom feed]({{ site.productionUrl | safe }}/feed.xml): Every post with full content
+- [JSON feed]({{ site.productionUrl | safe }}/feed.json): Every post with full content, as JSON Feed 1.1
+- [Sitemap]({{ site.productionUrl | safe }}/sitemap.xml): Every page on the site
+
+## Optional
+
+- [Archive]({{ site.productionUrl | safe }}/blog/archive/): Posts from 2013 to 2017
+{%- for group in collections.archiveByYear %}{% for post in group.items %}
+- [{{ post.data.title | safe }}]({{ site.productionUrl | safe }}{{ post.url | safe }}) ({{ group.year | safe }})
+{%- endfor %}{% endfor %}

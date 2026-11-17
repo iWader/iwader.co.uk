@@ -12,4 +12,4 @@ To get around this you simply need to install `illuminate/events` and give the d
 Eloquent::setEventDispatcher(new \Illuminate\Events\Dispatcher());
 ```
 
-A full working example can be found on the [laratools/laratools](https://github.com/laratools/laratools/blob/master/tests/phpunit/Eloquent/UuidTest.php#L20) repo
+A full working example can be found on the [laratools/laratools](https://github.com/laratools/laratools/blob/master/tests/Eloquent/UuidTest.php#L24) repo
