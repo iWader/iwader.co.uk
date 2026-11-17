@@ -4,7 +4,7 @@ date: "2014-05-13"
 excerpt: "So I’ve been dealing with quite a bit of spam recently, the usual “You’re due a tax rebate open XYZ.zip and fill out the form”, etc. Following from my last blog post, Postfix Force SMTP Authentication, I noticed I never set up my mail server to check received mail against the senders SPF records, which I always take the time to setup on domains"
 ---
 
-So I've been dealing with quite a bit of spam recently, the usual "You're due a tax rebate open XYZ.zip and fill out the form", etc. Following from my last blog post, [Postfix Force SMTP Authentication](http://blog.iwader.co.uk/postfix-force-smtp-authentication/), I noticed I never set up my mail server to check received mail against the senders SPF records, which I always take the time to set up on domains, so why had I not taken the time to make sure my own mail server was taking advantage of SPF.
+So I've been dealing with quite a bit of spam recently, the usual "You're due a tax rebate open XYZ.zip and fill out the form", etc. Following from my last blog post, [Postfix Force SMTP Authentication](/posts/2014/05/postfix-force-smtp-authentication/), I noticed I never set up my mail server to check received mail against the senders SPF records, which I always take the time to set up on domains, so why had I not taken the time to make sure my own mail server was taking advantage of SPF.
 
 In this guide I'll cover configuring postfix to check SPF records under Debian 7 Wheezy
 
