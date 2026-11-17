@@ -4,15 +4,9 @@ const pillars = require("./src/data/pillars.js")
 
 require('dotenv').config()
 
-const ARCHIVE_BEFORE_YEAR = 2018
+const archive = require('./lib/archive.js')
 
-const isArchived = (item) => {
-  if (typeof item.data.archive === 'boolean') {
-    return item.data.archive
-  }
-
-  return item.date.getUTCFullYear() < ARCHIVE_BEFORE_YEAR
-}
+const isArchived = (item) => archive.isArchived(item.date, item.data.archive)
 
 const groupByYear = (items) => {
   const groups = []

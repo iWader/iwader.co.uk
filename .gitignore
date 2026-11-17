@@ -1,3 +1,6 @@
 .cache
 public
 .env
+.DS_Store
+.idea/
+*.report.html
