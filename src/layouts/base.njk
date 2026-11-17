@@ -16,6 +16,7 @@
     <link rel="canonical" href="{{ canonical }}">
 
     <link rel="stylesheet" href="/assets/iwader.css?v={{ build.date.getTime() }}">
+    <script src="/assets/theme.js?v={{ build.date.getTime() }}"></script>
     {% if isPost %}<link rel="stylesheet" href="/assets/highlight.css?v={{ build.date.getTime() }}">{% endif %}
     <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
 
@@ -58,6 +59,7 @@
             <a rel="me" href="https://social.lol/@wade">Mastodon</a>
             <a href="https://www.strava.com/athletes/14657730">Strava</a>
             <a href="/feed.xml">RSS</a>
+            <button type="button" class="theme-toggle" data-theme-toggle hidden>Dark mode</button>
         </nav>
     </footer>
 </body>
