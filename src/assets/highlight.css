@@ -1,11 +1,28 @@
 /**
  * GHColors theme by Avi Aryan (http://aviaryan.in)
  * Inspired by Github syntax coloring
+ *
+ * Colours use light-dark() so they follow the site theme (system setting or footer toggle).
+ * Light comment/number/keyword colours darkened from the original to meet WCAG AA on white.
  */
+
+:root {
+    --code-text: light-dark(#393a34, #e6e1ec);
+    --code-bg: light-dark(#ffffff, var(--surface));
+    --code-inline-bg: light-dark(#f8f8f8, var(--surface));
+    --code-border: light-dark(#dddddd, var(--border));
+    --code-selection: light-dark(#b3d4fc, #3b2f5c);
+    --code-comment: light-dark(#6e6e5c, #9a94a6);
+    --code-string: light-dark(#e3116c, #ff8fb8);
+    --code-number: light-dark(#1f7f7d, #5fd4d1);
+    --code-keyword: light-dark(#0073a8, #7cc4ff);
+    --code-function: light-dark(#9a050f, #ff8a80);
+    --code-tag: light-dark(#00009f, #b4a7fd);
+}
 
 code[class*="language-"],
 pre[class*="language-"] {
-    color: #393A34;
+    color: var(--code-text);
     font-family: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace;
     direction: ltr;
     text-align: left;
@@ -31,12 +48,12 @@ pre > code[class*="language-"] {
 
 pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
 code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
-    background: #b3d4fc;
+    background: var(--code-selection);
 }
 
 pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
 code[class*="language-"]::selection, code[class*="language-"] ::selection {
-    background: #b3d4fc;
+    background: var(--code-selection);
 }
 
 /* Code blocks */
@@ -44,8 +61,8 @@ pre[class*="language-"] {
     padding: 1em;
     margin: .5em 0;
     overflow: auto;
-    border: 1px solid #dddddd;
-    background-color: white;
+    border: 1px solid var(--code-border);
+    background-color: var(--code-bg);
 }
 
 /* Inline code */
@@ -53,15 +70,15 @@ pre[class*="language-"] {
     padding: .2em;
     padding-top: 1px;
     padding-bottom: 1px;
-    background: #f8f8f8;
-    border: 1px solid #dddddd;
+    background: var(--code-inline-bg);
+    border: 1px solid var(--code-border);
 }
 
 .token.comment,
 .token.prolog,
 .token.doctype,
 .token.cdata {
-    color: #999988;
+    color: var(--code-comment);
     font-style: italic;
 }
 
@@ -71,12 +88,12 @@ pre[class*="language-"] {
 
 .token.string,
 .token.attr-value {
-    color: #e3116c;
+    color: var(--code-string);
 }
 
 .token.punctuation,
 .token.operator {
-    color: #393A34; /* no highlight */
+    color: var(--code-text); /* no highlight */
 }
 
 .token.entity,
@@ -89,26 +106,26 @@ pre[class*="language-"] {
 .token.property,
 .token.regex,
 .token.inserted {
-    color: #36acaa;
+    color: var(--code-number);
 }
 
 .token.atrule,
 .token.keyword,
 .token.attr-name,
 .language-autohotkey .token.selector {
-    color: #00a4db;
+    color: var(--code-keyword);
 }
 
 .token.function,
 .token.deleted,
 .language-autohotkey .token.tag {
-    color: #9a050f;
+    color: var(--code-function);
 }
 
 .token.tag,
 .token.selector,
 .language-autohotkey .token.keyword {
-    color: #00009f;
+    color: var(--code-tag);
 }
 
 .token.important,
