@@ -48,7 +48,7 @@ excerpt: "What I'm doing at the moment: work, running, what I'm listening to, an
                         {% if activity.map.image %}
                             <picture>
                                 {% if activity.map.image_dark %}<source srcset="{{ activity.map.image_dark }}" media="(prefers-color-scheme: dark)">{% endif %}
-                                <img src="{{ activity.map.image }}" alt="Map of {{ activity.name }}" loading="lazy" width="640" height="400">
+                                <img eleventy:ignore src="{{ activity.map.image }}" alt="Map of {{ activity.name }}" loading="lazy" width="640" height="400">
                             </picture>
                         {% else %}
                             <svg aria-hidden="true" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3-7 4 14 3-7h4"></path></svg>
@@ -94,7 +94,7 @@ excerpt: "What I'm doing at the moment: work, running, what I'm listening to, an
                     <div><dt>km by bike</dt><dd>{% numberFormat health.cycleDistance %}</dd></div>
                     <div><dt>Floors climbed</dt><dd>{% numberFormat health.floorsClimbed %}</dd></div>
                     <div class="stat-sleep">
-                        <img src="/assets/img/wade-sleeping.svg" alt="" width="96" height="78">
+                        <img eleventy:ignore src="/assets/img/wade-sleeping.svg" alt="" width="96" height="78">
                         <div><dt>Hours slept (weird, I know)</dt><dd>{% numberFormat health.hoursSlept %}</dd></div>
                     </div>
                 </dl>

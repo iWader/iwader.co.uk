@@ -12,7 +12,7 @@ What was important to me was the ride height, I'm quite tall and often find it a
 
 In June I placed my order for the Zoe Dynamique Nav (previously known as the Dynamique Intens), the process was quite shaky, bad communication and it took a long time. I eventually was able to collect the car at the start of November, which was slightly ahead of schedule, having originally been given the date of 24th November.
 
-![Renault Zoe](images/Group-1024x815.png)
+![Renault Zoe](images/renault-zoe-1024x815.jpg)
 
 Within the first couple of weeks I found a few faults with the car, nothing major, just odd things like the tyre pressure sensor not working, Z.E Services (online connectivity) not working, USB port not picking up devices, etc. nothing that stopped the car functioning. The dealership didn't want to know, in fact they didn't really know anything about the car at all. When I collected the car it was a quick check over and I was shown how to work the radio as, and I quote "I probably know more than the salesman"... right, even though he was supposed to be the specialist for the Zoe.
 

@@ -17,12 +17,12 @@ My shortcut is broken down into several individual ones to gather each piece of 
 
 Earlier this month, a conversation started in the office, prompted by [Robb](https://rknight.me) knowing several people who offer services for optimising shortcuts. I mentioned my issue, and we briefly had a look into what my shortcut was doing when it was running. My assumption about the query for health samples taking a long time was wrong, this finished within a few seconds. Oddly the time-consuming part was summing the samples.
 
-![Apple shortcut demonstrating that summing many Apple Health samples takes a long time](shortcut-unoptimized.webp)
+<video autoplay loop muted playsinline width="186" height="400" aria-label="Apple shortcut demonstrating that summing many Apple Health samples takes a long time"><source src="shortcut-unoptimized.mp4" type="video/mp4"></video>
 
 This is because samples are snapshots of activity within a small timeframe. A single day could see hundreds of samples added. So looping over these samples to sum them understandably takes time.
 
 The fix to this is simple, reduce the amount of results coming from the Apple Health query. To do this you can group results, I chose to group this by day, reducing my results to 30. This improved the performance dramatically, and is now under 5 seconds
 
-![Apple shortcut demonstrating that reducing the amount of results from a query improves performance](shortcut-optimized.webp)
+<video autoplay loop muted playsinline width="184" height="400" aria-label="Apple shortcut demonstrating that reducing the amount of results from a query improves performance"><source src="shortcut-optimized.mp4" type="video/mp4"></video>
 
 Now collecting my health data and deploying my site takes under 1 minute. My phone's battery is much happier, and I can deploy my site whenever I want.

@@ -25,14 +25,44 @@ const groupByYear = (items) => {
   return groups
 }
 
-module.exports = function (config) {
+module.exports = async function (config) {
+  const { eleventyImageTransformPlugin } = await import('@11ty/eleventy-img')
+
   config.addPlugin(syntaxHighlight)
   config.addPlugin(pluginRss)
+
+  // Every <img> in the built HTML is resized and converted to AVIF/WebP with a srcset, width and height.
+  // Images that shouldn't be processed (SVG illustrations, remote Mapbox maps) carry `eleventy:ignore`.
+  config.addPlugin(eleventyImageTransformPlugin, {
+    formats: ['avif', 'webp', 'auto'],
+    widths: [400, 800, 'auto'],
+    // Filenames are content hashes, so these can be cached forever (see _headers)
+    urlPath: '/img/',
+    outputDir: 'public/img/',
+    failOnError: true,
+    // Always write real files, including under --serve, so the output never points at the dev-only /.11ty/image/ endpoint
+    transformOnRequest: false,
+    sharpJpegOptions: { mozjpeg: true, quality: 75 },
+    sharpWebpOptions: { quality: 75 },
+    sharpPngOptions: { compressionLevel: 9 },
+    htmlOptions: {
+      imgAttributes: {
+        loading: 'lazy',
+        decoding: 'async',
+        // Posts are at most 728px wide (--narrow in iwader.css)
+        sizes: '(min-width: 768px) 728px, 100vw',
+      },
+    },
+  })
+
+  // JSON for a <script type="application/ld+json"> block. `<` is escaped so a title can't close the script tag.
+  config.addFilter('jsonLd', (data) => JSON.stringify(data).replace(/</g, '\\u003c'))
 
   config.addFilter('dateToRfc3339', pluginRss.dateToRfc3339);
 
   config.addPassthroughCopy('src/assets')
-  // Only copy post media, not the markdown sources or data files
+  // Only copy post media, not the markdown sources or data files.
+  // Pages use the processed copies in /img/; the originals are kept for feed readers, which get the raw HTML.
   config.addPassthroughCopy('src/posts/**/*.{jpg,jpeg,png,webp,gif,svg,mp4,webm}')
   config.addPassthroughCopy('src/robots.txt')
   config.addPassthroughCopy('src/_redirects')
