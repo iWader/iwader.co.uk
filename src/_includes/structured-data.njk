@@ -1,0 +1,48 @@
+{#- schema.org data for search engines. Rendered into <head> by base.njk. -#}
+{%- set person = {
+    "@type": "Person",
+    "@id": site.productionUrl + "/#person",
+    "name": site.name,
+    "url": site.productionUrl + "/",
+    "image": site.productionUrl + "/assets/img/wade-hello.png",
+    "jobTitle": "Head of Technology",
+    "worksFor": { "@type": "Organization", "name": "Radweb", "url": "https://radweb.co.uk/" },
+    "sameAs": [
+        site.linkedin,
+        "https://github.com/iWader",
+        "https://social.lol/@wade",
+        "https://www.strava.com/athletes/14657730"
+    ]
+} -%}
+{%- if page.url == '/' %}
+    <script type="application/ld+json">{{ {
+        "@context": "https://schema.org",
+        "@graph": [
+            person,
+            {
+                "@type": "WebSite",
+                "@id": site.productionUrl + "/#website",
+                "url": site.productionUrl + "/",
+                "name": site.name,
+                "description": site.description,
+                "inLanguage": "en-GB",
+                "publisher": { "@id": site.productionUrl + "/#person" }
+            }
+        ]
+    } | jsonLd | safe }}</script>
+{%- elif isPost %}
+    <script type="application/ld+json">{{ {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": title,
+        "description": metaDescription,
+        "url": canonical,
+        "mainEntityOfPage": canonical,
+        "datePublished": page.date | isoDate,
+        "dateModified": page.date | isoDate,
+        "inLanguage": "en-GB",
+        "image": (site.productionUrl + socialImage.url) if socialImage else (site.productionUrl + "/assets/img/wade-hello.png"),
+        "author": person,
+        "publisher": { "@id": site.productionUrl + "/#person" }
+    } | jsonLd | safe }}</script>
+{%- endif %}

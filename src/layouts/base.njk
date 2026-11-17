@@ -25,14 +25,22 @@
     <meta property="og:description" content="{{ metaDescription }}">
     <meta property="og:type" content="{{ 'article' if isPost else 'website' }}">
     <meta property="og:url" content="{{ canonical }}">
+    {%- if socialImage %}
+    <meta property="og:image" content="{{ site.productionUrl }}{{ socialImage.url }}">
+    <meta property="og:image:width" content="{{ socialImage.width }}">
+    <meta property="og:image:height" content="{{ socialImage.height }}">
+    <meta name="twitter:card" content="summary_large_image">
+    {%- else %}
     <meta property="og:image" content="{{ site.productionUrl }}/assets/img/wade-hello.png">
     <meta name="twitter:card" content="summary">
+    {%- endif %}
     {% if isPost %}<meta property="article:published_time" content="{{ page.date | isoDate }}">{% endif %}
     <meta name="fediverse:creator" content="@wade@social.lol">
 
     <link rel="alternate" type="application/rss+xml" title="Wade Urry RSS" href="{{ site.productionUrl }}/feed.xml">
     <link rel="ard" href="/.well-known/ard.json">
     <link rel="alternate" type="application/json" title="Wade Urry JSON Feed" href="{{ site.productionUrl }}/feed.json">
+    {% include "structured-data.njk" %}
 </head>
 <body>
     <a class="skip-link" href="#main">Skip to content</a>
