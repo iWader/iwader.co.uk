@@ -55,6 +55,35 @@ module.exports = async function (config) {
     },
   })
 
+  // Images are lazy-loaded, but a photo near the top of a post is usually in the first screen and is
+  // the largest thing on the page. Load that one straight away. Runs after the image transform.
+  const EAGER_WITHIN_CHARS = 600
+
+  config.addTransform('eager-lead-image', function (content) {
+    if (!this.page.outputPath || !this.page.outputPath.endsWith('.html')) {
+      return content
+    }
+
+    const start = content.indexOf('<div class="prose">')
+    const image = start === -1 ? -1 : content.indexOf('<img', start)
+
+    if (image === -1) {
+      return content
+    }
+
+    const textBefore = content.slice(start, image).replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim()
+    const end = content.indexOf('>', image)
+    const tag = content.slice(image, end + 1)
+
+    if (textBefore.length > EAGER_WITHIN_CHARS || !tag.includes('loading="lazy"')) {
+      return content
+    }
+
+    const eager = tag.replace('loading="lazy"', 'loading="eager" fetchpriority="high"')
+
+    return content.slice(0, image) + eager + content.slice(end + 1)
+  })
+
   // JSON for a <script type="application/ld+json"> block. `<` is escaped so a title can't close the script tag.
   config.addFilter('jsonLd', (data) => JSON.stringify(data).replace(/</g, '\\u003c'))
 
