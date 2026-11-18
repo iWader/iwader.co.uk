@@ -2,20 +2,29 @@
 permalink: feed.json
 eleventyExcludeFromCollections: true
 ---
-
+{#- Every value goes through `dump` (JSON.stringify) so quotes, newlines and markup in posts can't break the JSON -#}
 {
     "version": "https://jsonfeed.org/version/1.1",
-    "title": "Wade Urry",
-    "home_page_url": "https://iwader.co.uk/",
-    "feed_url": "https://iwader.co.uk/feed.json",
-    "items" : [
+    "title": {{ site.name | dump | safe }},
+    "description": {{ site.description | dump | safe }},
+    "home_page_url": "{{ site.productionUrl }}/",
+    "feed_url": "{{ site.productionUrl }}/feed.json",
+    "language": "en-GB",
+    "authors": [{ "name": {{ site.name | dump | safe }}, "url": "{{ site.productionUrl }}/" }],
+    "items": [
     {%- for post in collections.posts %}
-    {
-        "id" : "{{ post.data.page.url }}",
-        "title": "{{ post.data.title }}",
-        "url": "https://iwader.co.uk{{ post.data.page.url }}",
-        "content_text": "{{ post.data.excerpt }}",
-        "date_published": "{{ post.date | dateToRfc3339 }}"
-    }{% if not loop.last %},{% else %}{%- endif -%}
-    {%- endfor -%}
-]}
+        {%- set url = site.productionUrl + post.url %}
+        {
+            "id": {{ post.url | dump | safe }},
+            "url": {{ url | dump | safe }},
+            "title": {{ post.data.title | dump | safe }},
+            "summary": {{ post.data.excerpt | plainExcerpt(300) | dump | safe }},
+            "content_html": {{ post.templateContent | htmlToAbsoluteUrls(url) | dump | safe }},
+            {%- if post.data.socialImage %}
+            "image": {{ (site.productionUrl + post.data.socialImage.url) | dump | safe }},
+            {%- endif %}
+            "date_published": "{{ post.date | dateToRfc3339 }}"
+        }{% if not loop.last %},{% endif %}
+    {%- endfor %}
+    ]
+}
