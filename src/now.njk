@@ -46,10 +46,11 @@ excerpt: "What I'm doing at the moment: work, running, what I'm listening to, an
                 <a class="activity" href="https://www.strava.com/activities/{{ activity.id }}">
                     <div class="activity-media">
                         {% if activity.map.image %}
-                            <picture>
-                                {% if activity.map.image_dark %}<source srcset="{{ activity.map.image_dark }}" media="(prefers-color-scheme: dark)">{% endif %}
-                                <img eleventy:ignore src="{{ activity.map.image }}" alt="Map of {{ activity.name }}" loading="lazy" width="640" height="400">
-                            </picture>
+                            {#- Both maps are rendered and CSS shows the one for the current theme (including the footer toggle). Hidden lazy images aren't downloaded. #}
+                            <img eleventy:ignore {% if activity.map.image_dark %}class="map-light" {% endif %}src="{{ activity.map.image }}" alt="Map of {{ activity.name }}" loading="lazy" width="640" height="400">
+                            {%- if activity.map.image_dark %}
+                            <img eleventy:ignore class="map-dark" src="{{ activity.map.image_dark }}" alt="Map of {{ activity.name }}" loading="lazy" width="640" height="400">
+                            {%- endif %}
                         {% else %}
                             <svg aria-hidden="true" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3-7 4 14 3-7h4"></path></svg>
                         {% endif %}
